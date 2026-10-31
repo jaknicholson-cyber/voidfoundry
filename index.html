@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0b1013"/>
+  <meta name="description" content="Voidfoundry — an original, lore-conscious Space Marine Chapter creation studio. Forge heraldry, worlds and histories."/>
+  <title>VOIDFOUNDRY — Forge a Chapter. Write its legend.</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+<div class="site-grain" aria-hidden="true"></div>
+<div class="site-shell">
+  <header class="topbar">
+    <a class="brand" href="#forge" aria-label="Voidfoundry home">
+      <span class="brand-glyph"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 2 24 15 38 20 24 24 20 38 16 24 2 20 16 15Z" stroke="currentColor" stroke-width="1.6"/><path d="M20 11V29M11 20H29" stroke="currentColor" stroke-width="1.3"/></svg></span>
+      <span class="brand-name">VOID<span>FOUNDRY</span><small>CHAPTER CREATION STUDIO</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary navigation">
+      <button type="button" class="nav-button active" data-nav="forge">THE FOUNDRY</button>
+      <button type="button" class="nav-button" data-nav="archive">MY ARCHIVE <span id="archiveCount" class="tiny-number">0</span></button>
+      <button type="button" class="nav-button" data-nav="protocol">LORE PROTOCOL</button>
+    </nav>
+    <div class="topbar-right"><span class="live-dot"></span><span id="connectionLabel">OFFLINE FORGE READY</span><span class="top-version">V 01.0</span></div>
+  </header>
+
+  <main id="forge" class="main-area">
+    <div class="intro-bar"><span class="eyebrow"><span class="mini-diamond">✦</span> IMPERIAL RECORDS // CHAPTER DESIGNATION</span><span class="intro-right">UNOFFICIAL FAN CREATION TOOL <span class="fine-slash">/</span> 41ST MILLENNIUM &amp; BEYOND</span></div>
+    <div class="workbench">
+      <section class="control-panel" aria-labelledby="builderTitle">
+        <div class="control-heading"><div class="vertical-number">01 <span> / THE FORGE</span></div><span class="panel-dot-motif">✧ · ✧</span></div>
+        <h1 id="builderTitle">FORGE A<br/><em>LEGEND.</em></h1>
+        <p class="panel-intro">Every Chapter begins with a choice. Make yours — or surrender everything to fate.</p>
+        <div class="mode-row" role="group" aria-label="Generation mode">
+          <button id="randomMode" type="button" class="mode-button active"><span>✣</span> RANDOM</button>
+          <button id="customMode" type="button" class="mode-button"><span>☷</span> CUSTOM</button>
+        </div>
+        <div class="form-head"><span>CHAPTER PARAMETERS</span><button id="resetFields" type="button" class="link-button">RESET ALL ↺</button></div>
+        <div id="creatorFields" class="creator-fields"></div>
+        <div class="name-field"><label for="customName">CHAPTER NAME <span class="optional">OPTIONAL</span></label><input id="customName" placeholder="Let fate decide…" maxlength="54" autocomplete="off"/></div>
+        <button id="forgeButton" type="button" class="forge-button"><span class="forge-btn-symbol">✦</span><span>FORGE NEW CHAPTER</span><span class="forge-arrow">↗</span></button>
+        <div class="panel-footnote"><span class="mini-diamond">✧</span> CANON-CONSCIOUS GENERATION <span>·</span> ORIGINAL FAN LORE</div>
+      </section>
+      <section class="preview-panel" aria-labelledby="chapterName">
+        <div class="preview-meta"><span><span class="small-crest">✥</span> ADEPTUS ASTARTES <span class="meta-divider">/</span> CHAPTER DOSSIER</span><span class="dossier-id" id="dossierId">ARCHIVE // 0001</span></div>
+        <div class="hero-preview">
+          <div id="heroLandscape" class="hero-landscape"></div>
+          <div class="hero-haze"></div><div class="hero-frame-line"></div>
+          <div class="hero-badge"><span class="hero-badge-label">CHAPTER INSIGNIA</span><div id="heroInsignia"></div><span id="insigniaTitle">EST. M42</span></div>
+          <div class="hero-text"><div class="hero-kicker"><span class="kicker-line"></span> THE IMPERIUM ENDURES</div><h2 id="chapterName">THE ASHEN WARDENS</h2><p class="hero-subtitle" id="chapterEpithet">KEEPERS OF THE LAST LIGHT</p><div class="hero-quote" id="chapterCry">“By oath and iron.”</div></div>
+          <div id="heroMarine" class="marine-display" aria-hidden="true"></div>
+          <div class="hero-coords">EXPLORATOR RECORD <b>///</b> <span id="heroCoords">SECTOR 079</span><br/>NO OFFICIAL CANON STATUS CLAIMED</div>
+          <div class="vertical-edge-label">CHAPTER ARCHIVE <span>·</span> ORIGINAL RECORD</div>
+        </div>
+        <div class="stats-strip" id="chapterStats"></div>
+        <div class="preview-actions"><div class="actions-left"><button class="action-btn primary" id="saveButton" type="button">♧ <span>SAVE CHAPTER</span></button><button class="action-btn" id="shareButton" type="button">↗ <span>SHARE SEED</span></button><button class="action-btn" id="downloadButton" type="button">⇩ <span>EXPORT DOSSIER</span></button></div><div class="actions-right"><span id="aiStatus" class="ai-status">✧ PROCEDURAL ART</span><button class="action-btn ai-btn" id="imageButton" type="button">✦ <span>GENERATE AI ART</span></button></div></div>
+      </section>
+    </div>
+
+    <div class="archive-body" id="archiveBody">
+      <div class="section-head"><div><span class="eyebrow">ARCHIVE / PRIMARY RECORD</span><h2>THE CHAPTER <em>CODEX.</em></h2></div><p>Explore the story behind your new Chapter, from the first oath sworn to the last battle fought.</p></div>
+      <div class="tabs" role="tablist" aria-label="Chapter dossier sections"><button role="tab" aria-selected="true" data-tab="overview" class="tab active">01 <span>OVERVIEW</span></button><button role="tab" aria-selected="false" data-tab="homeworld" class="tab">02 <span>HOMEWORLD</span></button><button role="tab" aria-selected="false" data-tab="heraldry" class="tab">03 <span>HERALDRY</span></button><button role="tab" aria-selected="false" data-tab="chronicles" class="tab">04 <span>CHRONICLES</span></button></div>
+      <div class="tab-stage" id="tabContent"></div>
+    </div>
+    <footer class="footer"><div class="footer-brand">✦ VOIDFOUNDRY <span>— YOUR LEGEND, YOUR CHAPTER.</span></div><div class="footer-disclaimer">Unofficial fan tool. Warhammer 40,000, Adeptus Astartes and associated names are the property of Games Workshop. Original Chapters and assets are fan-created. Not affiliated with or endorsed by Games Workshop.</div></footer>
+  </main>
+</div>
+<div id="archiveOverlay" class="modal-root" aria-hidden="true"><div class="modal-backdrop" data-close="archive"></div><section class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"><div class="drawer-top"><div><span class="eyebrow">YOUR SAVED RECORDS</span><h2 id="drawerTitle">THE ARCHIVE</h2></div><button type="button" class="close-button" data-close="archive" aria-label="Close archive">×</button></div><p class="drawer-intro">Your Chapters are stored in this browser. Reopen, export or delete them at any time.</p><div id="savedChapters" class="saved-chapters"></div></section></div>
+<div id="protocolOverlay" class="modal-root" aria-hidden="true"><div class="modal-backdrop" data-close="protocol"></div><section class="drawer" role="dialog" aria-modal="true" aria-labelledby="protocolTitle"><div class="drawer-top"><div><span class="eyebrow">KNOW YOUR CANON</span><h2 id="protocolTitle">LORE PROTOCOL</h2></div><button type="button" class="close-button" data-close="protocol" aria-label="Close lore protocol">×</button></div><p class="drawer-intro">The Foundry is designed to respect the shape of the setting without pretending its invented history is official.</p><div class="protocol-block"><span class="protocol-type canon">◆ CANON ANCHOR</span><h3>Established background</h3><p>Gene-seed parentage, known flaws, Codex organisation and accepted Founding terminology inform the generator.</p></div><div class="protocol-block"><span class="protocol-type invented">◆ ORIGINAL FAN LORE</span><h3>Made for your Chapter</h3><p>Chapter name, heraldry, fortress, world, fauna, customs, characters and battles are invented for your dossier.</p></div><div class="protocol-block"><span class="protocol-type caution">◆ SPECULATIVE</span><h3>Explicit exceptions</h3><p>Unrecorded genealogy and original Second Founding successors are flagged as speculative. AI-enhanced records can still be wrong and should be reviewed against published lore.</p></div><div class="protocol-block"><span class="protocol-type caution">◆ IMAGE GENERATION</span><h3>Optional connected AI</h3><p>Without a server API key, the Foundry uses original procedural world landscapes and armour illustrations. With an API key it can create new concept art for every record.</p></div><p class="protocol-footer">For publication, avoid official artwork, copied codex passages and false claims of Games Workshop endorsement. Review their fan-content and IP guidance before making a public website.</p></section></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>
